@@ -22,8 +22,8 @@ startTimer = function () {
     if (!button.disabled) {
         
         button.disabled = true;
-        let seconds = 5;
-        let validateSeconds = 10;
+        let seconds = 60;
+        let validateSeconds = 120;
         normalValue.textContent = Math.ceil(Math.random() * 12);
         turboValue.textContent = Math.ceil(Math.random() * 12);
         updateButtonText(seconds);
