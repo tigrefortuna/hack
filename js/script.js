@@ -34,9 +34,9 @@ startTimer = function () {
 
             if (validateSeconds < 0) {
                 clearInterval(validateTimer);
-                validateValue = "--:--:--";
-                normalValue = "--";
-                turboValue = "--";
+                validateValue.textContent = "--:--:--";
+                normalValue.textContent = "--";
+                turboValue.textContent = "--";
             }
             else {
                 updateValidateText(validateSeconds);
