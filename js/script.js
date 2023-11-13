@@ -22,8 +22,8 @@ startTimer = function () {
     if (!button.disabled) {
         
         button.disabled = true;
-        let seconds = 60;
-        let validateSeconds = 120;
+        let seconds = 5;
+        let validateSeconds = 10;
         normalValue.textContent = Math.ceil(Math.random() * 12);
         turboValue.textContent = Math.ceil(Math.random() * 12);
         updateButtonText(seconds);
@@ -34,7 +34,7 @@ startTimer = function () {
 
             if (validateSeconds < 0) {
                 clearInterval(validateTimer);
-                validateValue.textContent = "--:--:--";
+                validateValue.textContent = "00:00:00";
                 normalValue.textContent = "--";
                 turboValue.textContent = "--";
             }
