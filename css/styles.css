@@ -78,7 +78,7 @@ h1 {
 }
 
 .dynamic-text {
-    font-size: 32px;
+    font-size: 30px;
     font-weight: bold;
 }
 .green-button {
@@ -92,6 +92,7 @@ h1 {
     margin: 10px;
     font-weight:bold;
     align-self: center; /* Adicionando essa linha para centralizar o botão */
+
 }
 
 .green-button:hover
@@ -99,8 +100,6 @@ h1 {
     background-color: #45a049;
 }
 .accuracy-text {
-    
-    
     color:lightgreen;
     font-size:22px;
 }

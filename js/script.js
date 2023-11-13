@@ -30,8 +30,8 @@ startTimer = function () {
         button.disabled = true;
         let seconds = 60;
         let validateSeconds = 120;
-        normalValue.textContent = getRandomInt(4, 12);
-        turboValue.textContent = getRandomInt(4, 12);
+        normalValue.textContent = `${getRandomInt(4, 12)}x`;
+        turboValue.textContent = `${getRandomInt(6, 12)}x`;
         updateButtonText(seconds);
         updateValidateText(validateSeconds);
 
@@ -55,7 +55,7 @@ startTimer = function () {
             if (seconds < 0) {
                 clearInterval(timer);
                 button.disabled = false;
-                button.textContent = 'Gerar Sinal';
+                button.textContent = 'Gerar Novo Sinal';
             } else {
                 updateButtonText(seconds);
             }
