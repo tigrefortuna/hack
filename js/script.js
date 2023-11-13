@@ -6,7 +6,7 @@ validateValue = document.getElementById("validate-value");
 accuracyText = document.getElementById("accuracy-value");
 timer = 0;
 validateTimer = 0;
-
+window.scrollTo(0, document.body.scrollHeight);
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
