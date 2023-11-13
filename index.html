@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Tigrinho da fortuna</title>
+</head>
+<body>
+    <div class="container">
+        <div class="background-image"></div>
+        <div class="card-container">
+
+            <div class="card">
+                <div class="card-icon">
+                    <img src="assets/iconentrada.webp" alt="Ícone 1">
+                </div>
+                <div class="card-text">
+                    <p>Normal:</p>
+                    <p class="dynamic-text"  id="normal-value">--</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <img src="assets/iconturbo-Copia.webp" alt="Ícone 2">
+                </div>
+                <div class="card-text">
+                    <p>Turbo:</p>
+                    <p class="dynamic-text"  id="turbo-value">--</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <img src="assets/iconvalidade-Copia.webp" alt="Ícone 3">
+                </div>
+                <div class="card-text">
+                    <p>Validade:</p>
+                    <p class="dynamic-text"  id="validate-value">00:00:00</p>
+                </div>
+            </div>
+        </div>
+        <p class="accuracy-text" id="accuracy-value">78% De Acerto.</p>
+        <button class="green-button" id="greenButton">Gerar Sinal</button>
+    </div>
+
+    <div class="plataform-div">
+        <iframe id="plataform-frame" src="https://cnc.bet/?id=71560226"></iframe>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
