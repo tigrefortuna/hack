@@ -6,11 +6,17 @@ validateValue = document.getElementById("validate-value");
 accuracyText = document.getElementById("accuracy-value");
 timer = 0;
 validateTimer = 0;
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 accuracyCalcule= function() {
-    let value = Math.floor(Math.random() * (90 - 70 + 1)) + 70;
+    let value = getRandomInt(70, 92);
     accuracyText.textContent = `${value}% de Acerto`
 }
 accuracyCalcule();
+
+
 
 accuracyValue = setInterval(function () {
     accuracyCalcule()
@@ -24,8 +30,8 @@ startTimer = function () {
         button.disabled = true;
         let seconds = 60;
         let validateSeconds = 120;
-        normalValue.textContent = Math.ceil(Math.random() * 12);
-        turboValue.textContent = Math.ceil(Math.random() * 12);
+        normalValue.textContent = getRandomInt(4, 12);
+        turboValue.textContent = getRandomInt(4, 12);
         updateButtonText(seconds);
         updateValidateText(validateSeconds);
 
