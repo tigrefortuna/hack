@@ -1,51 +1,50 @@
-
+﻿
 sinalBtn = document.getElementById("greenButton");
 normalValue = document.getElementById("normal-value");
 turboValue = document.getElementById("turbo-value");
-validateValue = document.getElementById("validate-value");
+ValidityValue = document.getElementById("Validity-value");
 accuracyText = document.getElementById("accuracy-value");
 timer = 0;
-validateTimer = 0;
-window.scrollTo(0, document.body.scrollHeight);
+ValidityTimer = 0;
+window.scrollTo(0, document.body.scrollHeight/6);
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 accuracyCalcule= function() {
     let value = getRandomInt(70, 92);
-    accuracyText.textContent = `${value}% de Acerto`
+    accuracyText.textContent = `${value}% 自信 (de Acerto)`
 }
 accuracyCalcule();
-
-
 
 accuracyValue = setInterval(function () {
     accuracyCalcule()
 },1000*60*2)
-
 startTimer = function () {
     let button = sinalBtn;
-    clearInterval(validateTimer);
+    clearInterval(ValidityTimer);
     if (!button.disabled) {
-        
+        button.style.backgroundColor = "grey";
+
         button.disabled = true;
         let seconds = 60;
-        let validateSeconds = 120;
-        normalValue.textContent = `${getRandomInt(4, 12)}x`;
+        let ValiditySeconds = 120;
+
+        normalValue.textContent = `${getRandomInt(5, 12)}x`;
         turboValue.textContent = `${getRandomInt(6, 12)}x`;
         updateButtonText(seconds);
-        updateValidateText(validateSeconds);
+        updateValidityText(ValiditySeconds);
 
-        validateTimer = setInterval(function () {
-            validateSeconds--
+        ValidityTimer = setInterval(function () {
+            ValiditySeconds--
 
-            if (validateSeconds < 0) {
-                clearInterval(validateTimer);
-                validateValue.textContent = "00:00:00";
+            if (ValiditySeconds < 0) {
+                clearInterval(ValidityTimer);
+                ValidityValue.textContent = "00:00:00";
                 normalValue.textContent = "--";
                 turboValue.textContent = "--";
             }
             else {
-                updateValidateText(validateSeconds);
+                updateValidityText(ValiditySeconds);
             }
         }, 1000)
 
@@ -55,7 +54,9 @@ startTimer = function () {
             if (seconds < 0) {
                 clearInterval(timer);
                 button.disabled = false;
-                button.textContent = 'Gerar Novo Sinal';
+                button.style.backgroundColor = "#4caf50";
+
+                button.textContent = '新分析 Novo Sinal';
             } else {
                 updateButtonText(seconds);
             }
@@ -65,11 +66,11 @@ startTimer = function () {
 
 sinalBtn.addEventListener("click", startTimer.bind());
 
-updateValidateText = function (seconds) {
+updateValidityText = function (seconds) {
     let minutes = Math.floor(seconds / 60);
     let remainingSeconds = seconds % 60;
 
-    validateValue.textContent = `00:${padZero(minutes)}:${padZero(remainingSeconds)}`;
+    ValidityValue.textContent = `00:${padZero(minutes)}:${padZero(remainingSeconds)}`;
 }
 
 
